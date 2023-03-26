@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+//Models
 use App\Models\Category;
+//Helpers
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -24,11 +26,11 @@ class CategorySeeder extends Seeder
             'Off Topic',
         ];
 
-        foreach ($categories as $key => $value) {
+        foreach ($categories as $category) {
             $newCategory = Category::create([
                 'name' => $category,
                 'slug' => Str::slug($category)
-            ])
+            ]);
         }
     }
 }

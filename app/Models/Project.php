@@ -14,5 +14,10 @@ class Project extends Model
         'description',
         'link',
         'imagn',
+        
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
