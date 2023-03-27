@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProjectRequest extends FormRequest
+class UpdateTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,14 +24,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30',
-            'description' => 'required|max:300',
-            'link' => 'required|max:500',
-            'imagn' => 'nullable|max:4080|image',
-            'category_id' => 'nullable|exists:categories,id',
-            'type_id' => 'nullable|exists:types,id',
-
-
+            //
         ];
     }
 }

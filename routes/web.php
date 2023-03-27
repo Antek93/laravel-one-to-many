@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::resource('projects', ProjectController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('types', TypeController::class);
 
 });
 

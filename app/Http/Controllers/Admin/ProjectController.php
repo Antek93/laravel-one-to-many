@@ -8,6 +8,10 @@ use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
+
+//Models
+use App\Models\Category;
+use App\Models\Type;
 //Helpers
 use Illuminate\Support\Facades\Storage;
 
@@ -22,8 +26,10 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $categories = Category::all();
+        $types = Type::all();
 
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects', 'categories', 'types'));
     }
 
     /**
@@ -33,7 +39,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $categories = Category::all();
+        $types = Type::all();
+
+        return view('admin.projects.create', compact('categories', 'types'));
     }
 
     /**
@@ -76,7 +85,10 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $categories = Category::all();
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project','categories','types'));
     }
 
     /**

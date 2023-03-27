@@ -31,9 +31,15 @@
                     Descrizione del progetto:
                 </div>
                 <div class="mx-1 px-3 fw-bold">
-                    @for ($i = 0; $i < 30; $i++)
+                    @for ($i = 0; $i <10; $i++)
                         {{ $project->description }}
                     @endfor
+                </div>
+                <div class="my-4 px-3">
+                    Categoria: {{ $project->category ? $project->category->name : 'nessuna categoria' }}
+                </div>
+                <div class="my-4 px-3">
+                    Tipo: {{ $project->type ? $project->type->name : 'nessun tipo' }}
                 </div>
             </div>
         </div>

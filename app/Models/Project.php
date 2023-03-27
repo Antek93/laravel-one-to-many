@@ -14,10 +14,16 @@ class Project extends Model
         'description',
         'link',
         'imagn',
+        'category_id',
+        'type_id',
         
     ];
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function type() {
+        return $this->belongsTo(Type::class);
     }
 }

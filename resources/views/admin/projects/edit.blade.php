@@ -56,6 +56,35 @@
                                 placeholder="Inserisci immagine al progetto" accept="image/*">
                         </div>
                         <div class="py-3">
+                            <label for="category_id">
+                                Categoria
+                            </label>
+                            <select name="category_id" id="category_id" class="form-control">
+                                <option value="">
+                                    Nessuna categoria
+                                </option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" {{ old('category_id', $project->category_id) == $category->id ? 'selected' : '' }}>
+                                         {{ $category->name }}
+                                        </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="py-3">
+                            <label for="type_id">
+                                Tipo
+                            </label>
+                            <select name="type_id" id="type_id" class="form-control">
+                                <option value="">
+                                    Nessuna tipo
+                                </option>
+                                @foreach ($types as $type)
+                                <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>
+                                        {{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="py-3">
                             <button class="btn btn-success">
                                 Aggiorna
                             </button>

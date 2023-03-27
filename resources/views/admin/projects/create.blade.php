@@ -56,6 +56,33 @@
                                 accept="image/*">
                         </div>
                         <div class="py-3">
+                            <label for="category_id">
+                                Categoria
+                            </label>
+                            <select name="category_id" id="category_id" class="form-control">
+                                <option value="">
+                                    Nessuna categoria
+                                </option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="py-3">
+                            <label for="type_id">
+                                Tipo
+                            </label>
+                            <select name="type_id" id="type_id" class="form-control">
+                                <option value="">
+                                    Nessuna tipo
+                                </option>
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->id }}"> {{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        <div class="py-3">
                             <button class="btn btn-success">
                                 Crea progetto
                             </button>

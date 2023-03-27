@@ -36,6 +36,12 @@
                         <h2>
                             {{ $project->id }}) {{ $project->name }}
                         </h2>
+                        <h6>
+                            Categoria: {{ $project->category ? $project->category->name : 'Nessuna Categoria' }}
+                        </h6>
+                        <h6>
+                            Tipo: {{ $project->type ? $project->type->name : 'Nessun tipo' }}
+                        </h6>
                     </div>
                     <div class="d-flex justy-content-between">
                         <div>
